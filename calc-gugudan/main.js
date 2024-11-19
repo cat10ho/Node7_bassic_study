@@ -44,6 +44,7 @@ async function calculator() {
             console.log("숫자 입력바람.")
         }
     }
+
     validChoice = false;
     while (!validChoice) {
         b = await readlineSync.question("연산자 입력");
@@ -55,6 +56,7 @@ async function calculator() {
         }
 
     }
+    
     validChoice = false;
     while (!validChoice) {
         c = await readlineSync.question("숫자 입력");

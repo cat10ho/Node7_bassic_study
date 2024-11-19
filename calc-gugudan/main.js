@@ -1,5 +1,8 @@
 // 필요한 모듈을 불러옵니다.
 import readlineSync from 'readline-sync';
+import {execSync} from ''
+
+execSync('chcp65001')
 
 // 프로그램 시작
 async function main() {

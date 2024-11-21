@@ -1,8 +1,8 @@
 const arr = [1, 2, 3, 4, 5];
 function myIndexOf(arr, value) {
   let arrIndex = 0;
-  for (index of arr) {
-    if (index === value) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === value) {
       return arrIndex;
     }
     arrIndex++;

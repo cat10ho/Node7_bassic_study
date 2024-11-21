@@ -5,8 +5,8 @@ const objArray = [
 ];
 
 function myForEach(arr, callback) {
-  for (index of arr) {
-    callback(index);
+  for (let i = 0; i < arr.length; i++) {
+    callback(arr[i]);
   }
   return;
 }

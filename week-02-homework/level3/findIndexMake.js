@@ -7,8 +7,8 @@ const objArray = [
 // myFindIndex 를 구현하여 arr.findIndex 와 동일한 값이 나오도록 하기.
 function myFindIndex(arr, callback) {
   let arrIndex = 0;
-  for (index of arr) {
-    if (callback(index)) {
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i])) {
       return arrIndex;
     }
     arrIndex++;

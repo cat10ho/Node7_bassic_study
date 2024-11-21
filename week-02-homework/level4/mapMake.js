@@ -6,8 +6,8 @@ const objArray = [
 
 function myMap(arr, callback) {
   let newArr = [];
-  for (index of arr) {
-    newArr.push(callback(index));
+  for (let i=0; i<arr.length; i++) {
+    newArr.push(callback(arr[i]));
   }
   return newArr;
 }

@@ -5,9 +5,9 @@ const objArray = [
 ];
 
 function myFind(arr, callback) {
-  for (index of arr) {
-    if (callback(index)) {
-      return index;
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i])) {
+      return arr[i];
     }
   }
   return "없습니다.";

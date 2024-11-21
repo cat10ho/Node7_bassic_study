@@ -6,9 +6,9 @@ const objArray = [
 
 function myFilter(arr, callback) {
   let newArr = [];
-  for (index of arr) {
-    if (callback(index)) {
-      newArr.push(index);
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i])) {
+      newArr.push(arr[i]);
     }
   }
   return newArr;
@@ -21,7 +21,6 @@ const result1 = objArray.filter(function (item) {
 const result2 = myFilter(objArray, function (item) {
   return item.price < 300;
 });
-
 
 console.log(result1);
 console.log(result2);

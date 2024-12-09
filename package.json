@@ -1,0 +1,13 @@
+{
+  "name": "node7_bassic_study",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.21.1"
+  },
+  "repository": "https://github.com/cat10ho/Node7_bassic_study.git",
+  "author": "이이삭 <dlrltn1091@gmail.com>",
+  "license": "MIT"
+}

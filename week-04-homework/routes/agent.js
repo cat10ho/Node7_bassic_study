@@ -8,23 +8,6 @@ const players = [
   { name: "호날두", speed: 100, shouting: 100, grade: "s" },
 ];
 
-//개별조회.
-router.get("/agent/:agentId", async (req, res, next) => {
-  const agentId = req.params.agentId;
-  if (+agentId >= 0 && +agentId < players.length) {
-    res
-      .status(201)
-      .send(
-        `name: ${players[+agentId].name} ,speed: ${
-          players[+agentId].speed
-        } ,shouting: ${players[+agentId].shouting} ,grade: ${
-          players[+agentId].grade
-        }`
-      );
-  } else {
-    res.status(404).send(`<p> 없는거 찾지말기.</p>`);
-  }
-});
 
 //전체조회
 router.get("/agent", async (req, res, next) => {
@@ -47,6 +30,34 @@ router.post("/agent", async (req, res, next) => {
 
   const message = ` <p>성공적으로 ${newAgent}을 생성함함.</p>`;
   res.status(201).send(message);
+});
+
+//수정.
+router.patch("/agent/:agentId", async (req, res, next) => {
+  const agentId = req.params.agentId;
+  const { name, speed, shouting, grade } = req.body;
+
+  if (+agentId >= 0 && +agentId < players.length) {
+    const agent = players[+agentId];
+
+    if (name !== undefined) agent.name = name;
+    if (speed !== undefined) agent.speed = speed;
+    if (shouting !== undefined) agent.shouting = shouting;
+    if (grade !== undefined) agent.grade = grade;
+
+    res
+      .status(201)
+      .send(
+        `name: ${players[+agentId].name} ,speed: ${
+          players[+agentId].speed
+        } ,shouting: ${players[+agentId].shouting} ,grade: ${
+          players[+agentId].grade
+        }`
+      );
+      
+  } else {
+    res.status(404).send(`<p> 없는거 찾지말기.</p>`);
+  }
 });
 
 

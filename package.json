@@ -4,8 +4,10 @@
   "main": "index.js",
   "type": "module",
   "dependencies": {
+    "@prisma/client": "^6.0.1",
     "bcrypt": "^5.1.1",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "prisma": "^6.0.1"
   },
   "repository": "https://github.com/cat10ho/Node7_bassic_study.git",
   "author": "이이삭 <dlrltn1091@gmail.com>",

@@ -14,7 +14,7 @@ router.get("/agent", async (req, res, next) => {
     },
   })
 
-  res.status(201).send(allAgents.join("<br>")); //이거 send는 html로 가공해서 보내는 거라 줄바꿈을 추가해서 넣는거.
+  res.status(201).json({ data: allAgents}); //이거 send는 html로 가공해서 보내는 거라 줄바꿈을 추가해서 넣는거.
 });
 
 //생성과 삭제.
@@ -32,7 +32,7 @@ router.post("/agent", async (req, res, next) => {
   })
 
   const message = ` <p>성공적으로 ${newAgent}을 생성함함.</p>`;
-  res.status(201).send(message);
+  res.status(201).json({ data: newAgent});
 });
 
 //수정.
@@ -47,7 +47,7 @@ router.patch("/agent/:agentId", async (req, res, next) => {
     },
   });
   
-    res.status(201).send(`업데이트 완료.`);
+    res.status(201).json(`업데이트 완료.`);
       
 });
 
@@ -64,8 +64,8 @@ router.delete("/agent/:agentId", async (req, res, next) => {
 
   await prisma.players.delete({ where: { id: +agentId} });
 
-    const message = ` <p>성공적으로 삭제함.</p>`;
-    res.status(201).send(message);
+    const message = ` 성공적으로 삭제함.`;
+    res.status(201).json(message);
  
 });
 
